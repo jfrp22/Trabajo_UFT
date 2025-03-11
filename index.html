@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Responsive con Mapa</title>
+    <title>Mi Página Responsive con Mapa y Logos</title>
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
@@ -21,6 +21,24 @@
             color: white;
             padding: 10px 0;
             text-align: center;
+            position: relative;
+        }
+
+        /* Contenedor de logos */
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+        }
+
+        /* Estilos para los logos */
+        .logo {
+            width: 50px; /* Tamaño de los logos */
+            height: auto;
         }
 
         /* Contenido principal */
@@ -64,6 +82,10 @@
             #map {
                 height: 300px; /* Altura del mapa en dispositivos móviles */
             }
+
+            .logo {
+                width: 40px; /* Tamaño de los logos en móviles */
+            }
         }
     </style>
 </head>
@@ -71,13 +93,19 @@
 
     <!-- Encabezado -->
     <header>
+        <div class="logo-container">
+            <img src="https://drive.google.com/file/d/1m7_zuCxdehGrqFn9gT8nQCS3WDj76drU/view?usp=sharing" alt="Logo 1" class="logo">
+            <img src="https://drive.google.com/file/d/1aYW6_YWhgrrQ0DNZY8RJJhJB3Q5m1wpi/view?usp=sharing" alt="Logo 2" class="logo">
+            <img src="https://via.placeholder.com/50" alt="Logo 3" class="logo">
+            <img src="https://via.placeholder.com/50" alt="Logo 4" class="logo">
+        </div>
         <h1>Mi Página Responsive con Mapa</h1>
     </header>
 
     <!-- Contenido principal -->
     <div class="container">
         <h2>Bienvenido a mi página</h2>
-        <p>Esta es una página de ejemplo diseñada para ser responsive. Incluye un mapa de OpenStreetMap centrado en Venezuela.</p>
+        <p>Esta es una página de ejemplo diseñada para ser responsive. Incluye un mapa de OpenStreetMap centrado en Venezuela y logos en las esquinas superiores.</p>
 
         <!-- Mapa -->
         <div id="map"></div>
