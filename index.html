@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Responsive</title>
+    <title>Mi Página Responsive con Mapa</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         /* Estilos generales */
         body {
@@ -24,6 +26,14 @@
         /* Contenido principal */
         .container {
             padding: 20px;
+        }
+
+        /* Mapa */
+        #map {
+            height: 400px; /* Altura del mapa */
+            width: 100%; /* Ancho del mapa */
+            margin-top: 20px;
+            border: 1px solid #ccc;
         }
 
         /* Pie de página */
@@ -50,6 +60,10 @@
             footer {
                 position: relative;
             }
+
+            #map {
+                height: 300px; /* Altura del mapa en dispositivos móviles */
+            }
         }
     </style>
 </head>
@@ -57,13 +71,16 @@
 
     <!-- Encabezado -->
     <header>
-        <h1>Mi Página Responsive</h1>
+        <h1>Mi Página Responsive con Mapa</h1>
     </header>
 
     <!-- Contenido principal -->
     <div class="container">
         <h2>Bienvenido a mi página</h2>
-        <p>Esta es una página de ejemplo diseñada para ser responsive. Se adapta a diferentes tamaños de pantalla, desde dispositivos móviles hasta escritorios.</p>
+        <p>Esta es una página de ejemplo diseñada para ser responsive. Incluye un mapa de OpenStreetMap centrado en Venezuela.</p>
+
+        <!-- Mapa -->
+        <div id="map"></div>
     </div>
 
     <!-- Pie de página -->
@@ -71,5 +88,26 @@
         <p>&copy; 2023 Mi Página Responsive</p>
     </footer>
 
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Variables modificables
+        const lat = 6.4238; // Latitud de Venezuela
+        const lon = -66.5897; // Longitud de Venezuela
+        const zoom = 6; // Nivel de zoom
+
+        // Inicializar el mapa
+        const map = L.map('map').setView([lat, lon], zoom);
+
+        // Añadir la capa de OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Añadir un marcador en Venezuela
+        L.marker([lat, lon]).addTo(map)
+            .bindPopup('¡Hola! Este es Venezuela.')
+            .openPopup();
+    </script>
 </body>
 </html>
