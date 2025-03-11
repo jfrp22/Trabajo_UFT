@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Responsive</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Contenido principal */
+        .container {
+            padding: 20px;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Estilos responsive */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            footer {
+                position: relative;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Mi Página Responsive</h1>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <h2>Bienvenido a mi página</h2>
+        <p>Esta es una página de ejemplo diseñada para ser responsive. Se adapta a diferentes tamaños de pantalla, desde dispositivos móviles hasta escritorios.</p>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 Mi Página Responsive</p>
+    </footer>
+
+</body>
+</html>
